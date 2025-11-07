@@ -26,6 +26,9 @@ header nav {
 header nav a {
     color: #6b4f4f;
     margin: 0 15px;
+}
+header nav a {
+    color: #6b4f4f;
     text-decoration: none;
     font-weight: bold;
     font-size: 1.2rem;
@@ -40,6 +43,24 @@ header nav a:hover {
     font-size: 1.5rem; /* esta mas grande este */
     font-weight: 700;  /* Negrita extra para mas atencion*/
     color: #b57d6a;    /* Un color distinto para destacarlo */
+}
+
+header nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.nav-center {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+}
+
+.nav-right {
+  position: absolute;
+  right: 40px; /* movelo más o menos según el espacio que quieras */
 }
 
 /* Hero Section */
@@ -329,6 +350,9 @@ p {
     object-fit: cover; /* Recortar las imágenes para mantener la alineación */
     border-radius: 10px;
 }
+.collection-item a {
+    color: black;
+}
 
 .collection-item p {
     margin-top: 10px;
@@ -386,10 +410,14 @@ footer {
 }
 
 footer a img {
+
     margin: 0 10px;
     filter: invert(100%);
     transition: filter 0.3s ease;
+    width: 32px; /* tamaño del ícono */
+    height: 30px; 
 }
+
 
 footer a img:hover {
     filter: invert(50%);
