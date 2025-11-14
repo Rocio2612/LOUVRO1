@@ -27,7 +27,7 @@
           <p><strong>Disponibilidad:</strong> 6 disponibles</p>
 <div class="acciones">
   <a href="index.html#contacto" class="boton">Dejar una reseña</a>
-  <a href="index.html#contacto" class="boton reservar">Reservar producto</a>
+  <a href="#" class="boton reservar">Reservar producto</a>
 </div>
         </div>
 
@@ -38,7 +38,7 @@
           <p><strong>Disponibilidad:</strong> 3 disponibles</p>
 <div class="acciones">
   <a href="index.html#contacto" class="boton">Dejar una reseña</a>
-  <a href="index.html#contacto" class="boton reservar">Reservar producto</a>
+  <a href="#" class="boton reservar">Reservar producto</a>
 </div>        </div>
 
         <div class="producto">
@@ -48,16 +48,45 @@
           <p><strong>Disponibilidad:</strong> 4 disponibles</p>
 <div class="acciones">
   <a href="index.html#contacto" class="boton">Dejar una reseña</a>
-  <a href="index.html#contacto" class="boton reservar">Reservar producto</a>
-</div>        </div>
+  <a href="#" class="boton reservar">Reservar producto</a>
+</div>       
+ </div>
 
       </div>
+    </section>
+      <section id="form-reserva" class="form-reserva oculto">
+      <h2>Reservar producto</h2>
+      <form action="https://formspree.io/f/xnngrezv" method="post">
+        <input type="text" name="nombre" placeholder="Tu nombre" required>
+        <input type="email" name="email" placeholder="Tu correo electrónico" required>
+        <input type="text" name="producto" id="producto" placeholder="Producto a reservar" readonly>
+        <input type="number" name="cantidad" placeholder="Cantidad deseada" min="1" required>
+        <input type="text" name="color" placeholder="Color o estilo preferido" required>
+        <textarea name="mensaje" placeholder="Alguna indicación especial (opcional)"></textarea>
+        <input type="submit" value="Enviar reserva">
+      </form>
     </section>
   </main>
 
   <footer>
     <p>© Louvro Cerámica</p>
   </footer>
+ <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const botones = document.querySelectorAll(".reservar");
+      const formSection = document.getElementById("form-reserva");
+      const inputProducto = document.getElementById("producto");
 
+      botones.forEach(boton => {
+        boton.addEventListener("click", function(event) {
+          event.preventDefault();
+          const producto = this.closest(".producto").querySelector("h3").textContent;
+          inputProducto.value = producto;
+          formSection.classList.remove("oculto");
+          formSection.scrollIntoView({ behavior: "smooth" });
+        });
+      });
+    });
+  </script>
 </body>
 </html>
