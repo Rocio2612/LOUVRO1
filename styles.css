@@ -235,8 +235,7 @@ footer a {
     color: white;
 }
 
-/* RESPONSIVE */
-@media (max-width: 768px) {
+/* RESPONSIVE */@media (max-width: 768px) {
 
     header {
         padding: 1rem;
@@ -244,12 +243,23 @@ footer a {
 
     header nav {
         flex-direction: column;
+        align-items: center;
         gap: 10px;
     }
 
     .nav-center {
         flex-direction: column;
+        align-items: center;
         gap: 15px;
+    }
+
+    .nav-right {
+        display: none; /* opcional si no usás nada ahí */
+    }
+
+    header nav a {
+        text-align: center;
+        width: 100%;
     }
 
     .text-content {
