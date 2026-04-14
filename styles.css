@@ -16,14 +16,14 @@ header {
 header nav {
     display: flex;
     align-items: center;
-    justify-content: space-between; /* contacto a la derecha */
+    justify-content: space-between;
 }
 
 /* Centro del nav */
 .nav-center {
     display: flex;
     justify-content: center;
-    gap: 50px; /* espacio entre los enlaces */
+    gap: 50px;
     flex: 1;
 }
 
@@ -39,10 +39,33 @@ header nav a {
     font-weight: bold;
     font-size: 1.1rem;
     transition: color 0.3s ease;
+    position: relative;
 }
 
 header nav a:hover {
     color: #b57d6a;
+}
+
+/* Animación underline */
+header nav a::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    bottom: -3px;
+    left: 0;
+    background-color: #b57d6a;
+    transition: width 0.3s;
+}
+
+header nav a:hover::after {
+    width: 100%;
+}
+
+/* Link activo */
+header nav a.active {
+    border-bottom: 2px solid #b57d6a;
+    padding-bottom: 3px;
 }
 
 /* Louvro más destacado */
@@ -51,6 +74,7 @@ header nav a:hover {
     font-weight: 700;
     color: #b57d6a;
 }
+
 /* Hero Section */
 .hero-section {
     background-image: url('https://i.pinimg.com/736x/56/1e/3d/561e3d00e171d656cc11d1b707582761.jpg');
@@ -81,7 +105,7 @@ header nav a:hover {
     font-size: 1.2rem;
 }
 
-/* Content Sections */
+/* Sections */
 section {
     margin-top: 50px;
     padding: 20px;
@@ -94,17 +118,16 @@ section {
 }
 
 h2 {
-    font-family: 'Playfair Display', serif; /* cambie a Playfair Display para los encabezados */
+    font-family: 'Playfair Display', serif;
     color: #b57d6a;
 }
 
 p {
-    font-family: 'Poppins', sans-serif; /* parrafos con Poppins */
     font-size: 1.1rem;
     line-height: 1.6;
 }
 
-/* Alineación de imágenes y texto en las secciones */
+/* Contenido */
 .content-container {
     display: flex;
     justify-content: space-between;
@@ -136,10 +159,11 @@ p {
 
 .collection-item img {
     width: 100%;
-    height: 250px; /* ajjustamiento de la altura para alinear las imágenes */
-    object-fit: cover; /* Recortar las imágenes para mantener la alineación */
+    height: 250px;
+    object-fit: cover;
     border-radius: 10px;
 }
+
 .collection-item a {
     color: black;
 }
@@ -149,7 +173,7 @@ p {
     font-size: 1rem;
 }
 
-/* Formulario de contacto */
+/* Formulario */
 form {
     display: flex;
     flex-direction: column;
@@ -157,36 +181,33 @@ form {
     margin: 0 auto;
 }
 
-form input {
+form input,
+form textarea {
     margin-bottom: 15px;
     padding: 12px;
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 1rem;
+}
+
+form textarea {
+    font-family: sans-serif;
 }
 
 form input[type="submit"] {
     background-color: #b57d6a;
     color: white;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: all 0.3s ease;
+    border: none;
 }
 
 form input[type="submit"]:hover {
     background-color: #9d6554;
+    transform: scale(1.05);
 }
 
-form textarea{
-    margin-bottom: 15px;
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 1rem;
-    font-family: sans-serif;
-
-}
-
-/* Centrado del título "Contacto" */
+/* Título centrado */
 .centered-title {
     text-align: center;
 }
@@ -200,13 +221,11 @@ footer {
 }
 
 footer a img {
-
     margin: 0 10px;
     transition: filter 0.3s ease;
-    width: 32px; /* tamaño del ícono */
-    height: 30px; 
+    width: 32px;
+    height: 30px;
 }
-
 
 footer a img:hover {
     filter: invert(50%);
@@ -214,4 +233,48 @@ footer a img:hover {
 
 footer a {
     color: white;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+
+    header {
+        padding: 1rem;
+    }
+
+    header nav {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .nav-center {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .text-content {
+        width: 100%;
+    }
+
+    .content-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .collection-item {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .hero-section {
+        height: 60vh;
+    }
+
+    .hero-section h1 {
+        font-size: 1.8rem;
+    }
+
+    .hero-section p {
+        font-size: 1rem;
+    }
 }
