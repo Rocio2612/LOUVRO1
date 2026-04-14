@@ -16,20 +16,16 @@ header {
 header nav {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center; /* TODO centrado */
 }
 
-/* Centro del nav */
+/* Nav centrado */
 .nav-center {
     display: flex;
     justify-content: center;
+    align-items: center;
     gap: 50px;
-    flex: 1;
-}
-
-/* Lado derecho */
-.nav-right {
-    flex-shrink: 0;
+    text-align: center;
 }
 
 /* Enlaces del nav */
@@ -64,18 +60,17 @@ header nav a:hover::after {
 
 /* Link activo */
 header nav a.active {
-    border-bottom: 2px solid #b57d6a;
-    padding-bottom: 3px;
+    color: #b57d6a;
 }
 
-/* Louvro más destacado */
+/* Louvro destacado */
 .louvro-title {
     font-size: 1.4rem;
     font-weight: 700;
     color: #b57d6a;
 }
 
-/* Hero Section */
+/* Hero */
 .hero-section {
     background-image: url('https://i.pinimg.com/736x/56/1e/3d/561e3d00e171d656cc11d1b707582761.jpg');
     background-size: cover;
@@ -84,7 +79,6 @@ header nav a.active {
     display: flex;
     justify-content: center;
     align-items: center;
-    position: relative;
     border-radius: 0 0 50px 50px;
 }
 
@@ -98,7 +92,6 @@ header nav a.active {
 
 .hero-section h1 {
     font-size: 2.5rem;
-    margin-bottom: 0.5rem;
 }
 
 .hero-section p {
@@ -170,7 +163,6 @@ p {
 
 .collection-item p {
     margin-top: 10px;
-    font-size: 1rem;
 }
 
 /* Formulario */
@@ -207,11 +199,6 @@ form input[type="submit"]:hover {
     transform: scale(1.05);
 }
 
-/* Título centrado */
-.centered-title {
-    text-align: center;
-}
-
 /* Footer */
 footer {
     background-color: #2c3e50;
@@ -222,20 +209,17 @@ footer {
 
 footer a img {
     margin: 0 10px;
-    transition: filter 0.3s ease;
     width: 32px;
     height: 30px;
+    transition: filter 0.3s ease;
 }
 
 footer a img:hover {
     filter: invert(50%);
 }
 
-footer a {
-    color: white;
-}
-
-/* RESPONSIVE */@media (max-width: 768px) {
+/* RESPONSIVE */
+@media (max-width: 768px) {
 
     header {
         padding: 1rem;
@@ -243,23 +227,17 @@ footer a {
 
     header nav {
         flex-direction: column;
-        align-items: center;
         gap: 10px;
     }
 
     .nav-center {
         flex-direction: column;
-        align-items: center;
         gap: 15px;
     }
 
-    .nav-right {
-        display: none; /* opcional si no usás nada ahí */
-    }
-
     header nav a {
-        text-align: center;
         width: 100%;
+        text-align: center;
     }
 
     .text-content {
